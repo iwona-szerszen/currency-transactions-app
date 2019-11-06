@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
 	}
 };
 
-// Selector
+// Selectors
 
 // Get EUR to PLN converter
 export const getEuroToPlnConverter = state => state.euroToPlnConverter;
@@ -38,7 +38,7 @@ export const getTotalAmountEur = state => {
 };
 
 // Get transaction with max amount [EUR]
-export const getMaxTransaction = state => {
+export const getMaxTransactions = state => {
     // Create array of all the amounts [EUR]
 	const amountsEur = [];
 	state.transactions.forEach(item => amountsEur.push(item.amountEur));
@@ -46,7 +46,8 @@ export const getMaxTransaction = state => {
 	// Find the max amount [EUR]
 	let maxAmountEur = amountsEur.reduce((a,b) => Math.max(a,b));
 
-	// Return transactions with max amount [EUR]
+	// Return transactions with max amount [EUR] - it is acceptable to be more then one
+	// transactions with the same max amount
 	return state.transactions.filter(transaction => transaction.amountEur === maxAmountEur);
 };
 
