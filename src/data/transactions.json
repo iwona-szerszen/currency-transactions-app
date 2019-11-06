@@ -1,0 +1,27 @@
+[
+	{
+		"id": "1",
+		"name": "Transaction 1",
+		"amountEur": 1000
+	},
+	{
+		"id": "2",
+		"name": "Transaction 2",
+		"amountEur": 2000
+	},
+	{
+		"id": "3",
+		"name": "Transaction 3",
+		"amountEur": 3000
+	},
+	{
+		"id": "4",
+		"name": "Transaction 4",
+		"amountEur": 4000
+	},
+	{
+		"id": "5",
+		"name": "Transaction 5",
+		"amountEur": 5000
+	}
+]
