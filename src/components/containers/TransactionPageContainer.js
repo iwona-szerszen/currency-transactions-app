@@ -52,17 +52,16 @@ class TransactionPageContainer extends Component {
 	}
 	render() {
 		return (
-			<div className='container'>
-				<ConverterUnit
-					converterInput={this.state.converterInput}
-					onConverterInputChange={this.handleConverterInputChange.bind(this)}
-					onSubmitUpdateConverter={this.handleSubmitUpdateConverter.bind(this)}
-				/>
-				<AddTransactionUnit
-					transactionForm={this.state.transactionForm}
-					onTransactionInputChange={this.handleTransactionInputChange.bind(this)}
-					onSubmitAddTransaction={this.handleSubmitAddTransaction.bind(this)}
-				/>
+			<div className='container main-container'>
+				<div className='row'>
+					<div className='col-7'>
+						<ConverterUnit
+							converterInput={this.state.converterInput}
+							onConverterInputChange={this.handleConverterInputChange.bind(this)}
+							onSubmitUpdateConverter={this.handleSubmitUpdateConverter.bind(this)}
+						/>
+					</div>
+				</div>
 				<div className='row'>
 					<div className='col-7'>
 						<TransactionList
@@ -73,10 +72,23 @@ class TransactionPageContainer extends Component {
 						/>
 					</div>
 					<div className='col-5'>
-						<MaxTransactions
-							maxTransactions={this.props.maxTransactions}
-							euroToPlnConverter={this.props.euroToPlnConverter}
-						/>
+						<div className='row'>
+							<div className='col'>
+								<AddTransactionUnit
+									transactionForm={this.state.transactionForm}
+									onTransactionInputChange={this.handleTransactionInputChange.bind(this)}
+									onSubmitAddTransaction={this.handleSubmitAddTransaction.bind(this)}
+								/>
+							</div>
+						</div>
+						<div className='row'>
+							<div className='col'>
+								<MaxTransactions
+									maxTransactions={this.props.maxTransactions}
+									euroToPlnConverter={this.props.euroToPlnConverter}
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
