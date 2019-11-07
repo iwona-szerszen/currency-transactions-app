@@ -48,7 +48,7 @@ export const getMaxTransactions = state => {
 		let maxAmountEur = amountsEur.reduce((a,b) => Math.max(a,b));
 
 		// Return transactions with max amount [EUR] - it is acceptable to be more then one
-		// transactions with the same max amount
+		// transaction with the same max amount
 		return state.transactions.filter(transaction => transaction.amountEur === maxAmountEur);
 	} else {
 		return [];
